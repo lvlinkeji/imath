@@ -49,10 +49,11 @@ RUN mkdir /run/sshd && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
-    mv /settings.json ~/.local/share/code-server/User/settings.json && \
-    chmod a+rx ~/.local/share/code-server/User/settings.json && \
-    mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json && \
-    chmod a+rx ~/.local/share/code-server/User/tasks.json
+    mv /settings.json .local/share/code-server/User/settings.json && \
+    chmod a+rx .local/share/code-server/User/settings.json && \
+    mv /rclone-tasks.json .local/share/code-server/User/tasks.json && \
+    chmod a+rx .local/share/code-server/User/tasks.json && \
+    code-server --install-extension actboy168.tasks
 
 # EXPOSE 1-65535
 

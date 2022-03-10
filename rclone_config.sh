@@ -19,9 +19,9 @@ if [[ -z "${RCLONE_DATA}" ]]; then
 
 else
     echo "[$PREFIX] Copying rclone config..."
-    mkdir -p ~/.config/rclone/
-    touch ~/.config/rclone/rclone.conf
-    echo $RCLONE_DATA | base64 -d > ~/.config/rclone/rclone.conf
+    mkdir -p .config/rclone/
+    touch .config/rclone/rclone.conf
+    echo $RCLONE_DATA | base64 -d > .config/rclone/rclone.conf
 
     # default to true
     RCLONE_VSCODE_TASKS="${RCLONE_VSCODE_TASKS:-true}"
@@ -33,14 +33,14 @@ else
         echo "[$PREFIX] Applying VS Code tasks for rclone"
         #cp /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
         # install the extension to add to menu bar
-        code-server --install-extension actboy168.tasks&
+        #code-server --install-extension actboy168.tasks&
     else
         # user specified they don't want to apply the tasks
         echo "[$PREFIX] Skipping VS Code tasks for rclone"
     fi
 
 
-
+    mkdir -p /home/coder
     # Full path to the remote filesystem
     RCLONE_REMOTE_PATH=${RCLONE_REMOTE_NAME:-gdrive_small}:${RCLONE_DESTINATION:-Projects}
     RCLONE_SOURCE_PATH=${RCLONE_SOURCE:-$START_DIR}

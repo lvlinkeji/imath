@@ -2,6 +2,12 @@
 
 mkdir -p $START_DIR
 
+mkdir -p ~/.local/share/code-server/User
+mv /settings.json ~/.local/share/code-server/User/settings.json
+chmod a+rx ~/.local/share/code-server/User/settings.json
+mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
+chmod a+rx ~/.local/share/code-server/User/tasks.json
+
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 prl=`grep PermitRootLogin /etc/ssh/sshd_config`

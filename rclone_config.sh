@@ -19,9 +19,9 @@ if [[ -z "${RCLONE_DATA}" ]]; then
 
 else
     echo "[$PREFIX] Copying rclone config..."
-    mkdir -p .config/rclone/
-    touch .config/rclone/rclone.conf
-    echo $RCLONE_DATA | base64 -d > .config/rclone/rclone.conf
+    mkdir -p ~/.config/rclone/
+    touch ~/.config/rclone/rclone.conf
+    echo $RCLONE_DATA | base64 -d > ~/.config/rclone/rclone.conf
 
     # default to true
     RCLONE_VSCODE_TASKS="${RCLONE_VSCODE_TASKS:-true}"
@@ -46,7 +46,8 @@ else
     RCLONE_SOURCE_PATH=${RCLONE_SOURCE:-$START_DIR}
     echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH $RCLONE_FLAGS -vv" > /home/coder/push_remote.sh
     echo "rclone sync $RCLONE_REMOTE_PATH $RCLONE_SOURCE_PATH $RCLONE_FLAGS -vv" > /home/coder/pull_remote.sh
-    chmod +x push_remote.sh pull_remote.sh
+    chmod a+rx /home/coder/push_remote.sh
+    chmod a+rx /home/coder/pull_remote.sh
 
     if rclone ls $RCLONE_REMOTE_PATH; then
 

@@ -49,12 +49,7 @@ RUN mkdir /run/sshd && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
-    mkdir -p .local/share/code-server/User && \
-    mv /settings.json .local/share/code-server/User/settings.json && \
-    chmod a+rx .local/share/code-server/User/settings.json && \
-    mv /rclone-tasks.json .local/share/code-server/User/tasks.json && \
-    chmod a+rx .local/share/code-server/User/tasks.json && \
-    code-server --install-extension actboy168.tasks
+    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
 
 # EXPOSE 1-65535
 

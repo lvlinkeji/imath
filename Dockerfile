@@ -53,11 +53,7 @@ RUN mkdir /run/sshd && \
     chmod a+rx ~/.local/share/code-server/User/settings.json && \
     mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json && \
     chmod a+rx ~/.local/share/code-server/User/tasks.json && \
-    code-server --install-extension actboy168.tasks && \
-    code-server --install-extension golang.go && \
-    code-server --install-extension ms-python.python && \
-    code-server --install-extension james-yu.latex-workshop && \
-    code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
+    code-server --install-extension actboy168.tasks
 
 # EXPOSE 1-65535
 

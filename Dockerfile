@@ -49,6 +49,9 @@ RUN mkdir /run/sshd && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
+    code-server --install-extension golang.go && \
+    code-server --install-extension ms-python.python && \
+    code-server --install-extension james-yu.latex-workshop && \
     code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
 
 # EXPOSE 1-65535

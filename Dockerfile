@@ -52,8 +52,7 @@ RUN mkdir /run/sshd && \
     mv /settings.json ~/.local/share/code-server/User/settings.json && \
     chmod a+rx ~/.local/share/code-server/User/settings.json && \
     mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json && \
-    chmod a+rx ~/.local/share/code-server/User/tasks.json && \
-    code-server --install-extension actboy168.tasks
+    chmod a+rx ~/.local/share/code-server/User/tasks.json
 
 # EXPOSE 1-65535
 

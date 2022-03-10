@@ -33,7 +33,7 @@ else
         echo "[$PREFIX] Applying VS Code tasks for rclone"
         #cp /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
         # install the extension to add to menu bar
-        #code-server --install-extension actboy168.tasks&
+        code-server --install-extension actboy168.tasks&
     else
         # user specified they don't want to apply the tasks
         echo "[$PREFIX] Skipping VS Code tasks for rclone"

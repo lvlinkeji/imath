@@ -116,7 +116,8 @@ RUN mkdir /run/sshd && \
 #RUN chmod a+rx /start.sh
 
 # Port
-ENV PORT=80 START_DIR=/home/Projects
+ENV PORT=80
+ENV START_DIR=/home/Projects
 
 #CMD /start.sh
 ENTRYPOINT ["/start.sh"]

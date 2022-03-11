@@ -1,5 +1,6 @@
 {
   "workbench.colorTheme": "Default Dark+",
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "files.autoSave": "afterDelay"
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 1000
 }

@@ -106,7 +106,7 @@ do
 	sleep 60
     # Full path to the remote filesystem
     time=$(date "+%Y-%m-%d_%H-%M-%S")
-    RCLONE_REMOTE_PATH_B=${RCLONE_REMOTE_NAME:-gdrive_small}:${RCLONE_DESTINATION:-docker_backup/Heroku/${time}}
+    RCLONE_REMOTE_PATH_B=${RCLONE_REMOTE_NAME:-gdrive_small}:${RCLONE_DESTINATION:-Docker_Backup/Heroku/${time}}
     RCLONE_SOURCE_PATH_B=${RCLONE_SOURCE:-$START_DIR}
     rclone sync $RCLONE_SOURCE_PATH_B $RCLONE_REMOTE_PATH_B $RCLONE_FLAGS -vv
 done

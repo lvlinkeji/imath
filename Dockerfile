@@ -48,7 +48,8 @@ RUN mkdir /run/sshd && \
     ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
-    chmod a+rx /usr/local/bin/youtube-dl
+    chmod a+rx /usr/local/bin/youtube-dl && \
+    chmod a+rx /actboy168.tasks-0.9.0.vsix
 
 # EXPOSE 1-65535
 

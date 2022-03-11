@@ -29,5 +29,6 @@
         }
       }
     }
-  ]
+  ],
+	"statusbar.default.hide":false
 }

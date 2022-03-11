@@ -8,6 +8,8 @@ chmod a+rx ~/.local/share/code-server/User/settings.json
 mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
 chmod a+rx ~/.local/share/code-server/User/tasks.json
 
+code-server --install-extension /actboy168.tasks-0.9.0.vsix
+
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 prl=`grep PermitRootLogin /etc/ssh/sshd_config`

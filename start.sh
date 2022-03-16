@@ -67,7 +67,7 @@ screen -x -S $screen_name -p 0 -X stuff '\n'
 #run code-server
 screen_name="code-server"
 screen -dmS $screen_name
-cmd="code-server $START_DIR";
+cmd="code-server --host 0.0.0.0 --port 8722 $START_DIR";
 screen -x -S $screen_name -p 0 -X stuff "$cmd"
 screen -x -S $screen_name -p 0 -X stuff '\n'
 

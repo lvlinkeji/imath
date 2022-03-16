@@ -16,6 +16,11 @@ code-server --install-extension ms-ceintl.vscode-language-pack-zh-hans
 code-server --install-extension ms-python.python
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
+mkdir -p ~/.config/code-server
+rm -rf ~/.config/code-server/config.yaml
+mv /config.yaml ~/.config/code-server/config.yaml
+chmod a+rx ~/.config/code-server/config.yaml
+
 prl=`grep PermitRootLogin /etc/ssh/sshd_config`
 pa=`grep PasswordAuthentication /etc/ssh/sshd_config`
 if [[ -n $prl && -n $pa ]]; then
@@ -62,11 +67,8 @@ screen -x -S $screen_name -p 0 -X stuff '\n'
 #run code-server
 screen_name="code-server"
 screen -dmS $screen_name
-cmd1="export PASSWORD=c68.300OQa";
-cmd2="code-server --host 0.0.0.0 --port 8722 $START_DIR";
-screen -x -S $screen_name -p 0 -X stuff "$cmd1"
-screen -x -S $screen_name -p 0 -X stuff '\n'
-screen -x -S $screen_name -p 0 -X stuff "$cmd2"
+cmd="code-server $START_DIR";
+screen -x -S $screen_name -p 0 -X stuff "$cmd"
 screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #run ttyd

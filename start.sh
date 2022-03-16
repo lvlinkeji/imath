@@ -7,8 +7,6 @@ mv /settings.json ~/.local/share/code-server/User/settings.json
 chmod a+rx ~/.local/share/code-server/User/settings.json
 mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
 chmod a+rx ~/.local/share/code-server/User/tasks.json
-mv /argv.json ~/.local/share/code-server/User/argv.json
-chmod a+rx ~/.local/share/code-server/User/argv.json
 
 code-server --install-extension /actboy168.tasks-0.9.0.vsix
 code-server --install-extension /ms-vscode.cpptools-1.9.3@linux-x64.vsix
@@ -73,8 +71,8 @@ screen -x -S $screen_name -p 0 -X stuff '\n'
 #run ttyd
 screen_name="ttyd"
 screen -dmS $screen_name
-#cmd="ttyd login";
-cmd="ttyd -p 7681 -c admin:adminks123 bash"
+cmd="ttyd login";
+#cmd="ttyd -p 7681 -c admin:adminks123 bash"
 screen -x -S $screen_name -p 0 -X stuff "$cmd"
 screen -x -S $screen_name -p 0 -X stuff '\n'
 

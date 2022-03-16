@@ -10,6 +10,7 @@ chmod a+rx ~/.local/share/code-server/User/tasks.json
 
 code-server --install-extension /actboy168.tasks-0.9.0.vsix
 code-server --install-extension /ms-vscode.cpptools-1.9.3@linux-x64.vsix
+code-server --install-extension /ms-python.python-2022.3.10741003.vsix
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 prl=`grep PermitRootLogin /etc/ssh/sshd_config`

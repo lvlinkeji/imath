@@ -34,8 +34,8 @@ RUN mkdir /run/sshd && \
     chmod +rwx /supervisord.conf && \
     chmod +rwx /htpasswd && \
     chmod +rw /grad_school.zip && \
-    chmod a+rx /start.sh && \
-    chmod a+rx /rclone_config.sh && \
+    chmod a+rwx /start.sh && \
+    chmod a+rwx /rclone_config.sh && \
     unzip -o /grad_school.zip -d / && \
     chmod -Rf +rw /templatemo_557_grad_school && \
     wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /usr/local/bin/ttyd && \

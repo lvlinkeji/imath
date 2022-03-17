@@ -57,7 +57,7 @@ chmod -Rf 777 /run/screen
 #run rclone config
 screen_name="rclone_config"
 screen -dmS $screen_name
-cmd="bash /rclone_config.sh";
+cmd="/rclone_config.sh";
 screen -x -S $screen_name -p 0 -X stuff "$cmd"
 screen -x -S $screen_name -p 0 -X stuff '\n'
 

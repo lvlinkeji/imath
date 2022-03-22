@@ -50,13 +50,13 @@
 			"tools": [
 				"xelatex",
 				"xelatex"
-			],
+			]
 		},
 		{
 			"name": "xelatex",
 			"tools": [
 				"xelatex"
-			],
+			]
 		},
 		{
 			"name": "pdflatex * 2",

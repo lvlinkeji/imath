@@ -1,7 +1,7 @@
 FROM debian:testing
 USER root
 RUN apt-get update
-RUN apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor pure-ftpd-common pure-ftpd iputils-ping fuse -y
+RUN apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor pure-ftpd-common pure-ftpd iputils-ping fuse aria2 -y
 
 ENV LANG C.UTF-8
 

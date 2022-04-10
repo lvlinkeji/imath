@@ -11,6 +11,7 @@ ADD . /
 #    echo root:c68.300OQa|chpasswd && \
 #    sysctl vm.overcommit_memory=1
 
+SHELL ["/bin/bash", "-c"]
 # Use bash shell
 ENV SHELL=/bin/bash
 

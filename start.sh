@@ -85,12 +85,12 @@ filebrowser config set -p 60002
 filebrowser users add root c68.300OQa --perm.admin
 
 #run filebrowser
-screen_name="filebrowser"
-screen -dmS $screen_name
-cmd="filebrowser -r /";
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff '\n'
-#filebrowser username:admin password:admin
+# screen_name="filebrowser"
+# screen -dmS $screen_name
+# cmd="filebrowser -r /";
+# screen -x -S $screen_name -p 0 -X stuff "$cmd"
+# screen -x -S $screen_name -p 0 -X stuff '\n'
+#filebrowser username:root password:c68.300OQa
 
 #run rclone
 screen_name="rclone"

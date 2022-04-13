@@ -63,19 +63,19 @@ screen -x -S $screen_name -p 0 -X stuff "$cmd"
 screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #run code-server
-screen_name="code-server"
-screen -dmS $screen_name
-cmd="code-server --host 0.0.0.0 --port 8722 $START_DIR";
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff '\n'
+# screen_name="code-server"
+# screen -dmS $screen_name
+# cmd="code-server --host 0.0.0.0 --port 8722 $START_DIR";
+# screen -x -S $screen_name -p 0 -X stuff "$cmd"
+# screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #run ttyd
-screen_name="ttyd"
-screen -dmS $screen_name
-#cmd="ttyd login";
-cmd="ttyd -p 7681 -c admin:adminks123 bash"
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff '\n'
+# screen_name="ttyd"
+# screen -dmS $screen_name
+# #cmd="ttyd login";
+# cmd="ttyd -p 7681 -c admin:adminks123 bash"
+# screen -x -S $screen_name -p 0 -X stuff "$cmd"
+# screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 #filebrowser -r /

@@ -12,6 +12,7 @@ code-server --install-extension /actboy168.tasks-0.9.0.vsix
 code-server --install-extension /ms-vscode.cpptools-1.9.3@linux-x64.vsix
 code-server --install-extension ms-python.python
 code-server --install-extension james-yu.latex-workshop
+code-server --install-extension ms-azuretools.vscode-docker
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 mkdir -p ~/.config/code-server
@@ -56,11 +57,11 @@ service nginx start &
 chmod -Rf 777 /run/screen
 
 #run rclone config
-screen_name="rclone_config"
-screen -dmS $screen_name
-cmd="/rclone_config.sh";
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff '\n'
+# screen_name="rclone_config"
+# screen -dmS $screen_name
+# cmd="/rclone_config.sh";
+# screen -x -S $screen_name -p 0 -X stuff "$cmd"
+# screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #run code-server
 # screen_name="code-server"
@@ -93,11 +94,11 @@ filebrowser users add root c68.300OQa --perm.admin
 #filebrowser username:root password:c68.300OQa
 
 #run rclone
-screen_name="rclone"
-screen -dmS $screen_name
-cmd="rclone rcd --rc-web-gui --rc-addr 127.0.0.1:5572 --rc-user root --rc-pass c68.300OQa";
-screen -x -S $screen_name -p 0 -X stuff "$cmd"
-screen -x -S $screen_name -p 0 -X stuff '\n'
+# screen_name="rclone"
+# screen -dmS $screen_name
+# cmd="rclone rcd --rc-web-gui --rc-addr 127.0.0.1:5572 --rc-user root --rc-pass c68.300OQa";
+# screen -x -S $screen_name -p 0 -X stuff "$cmd"
+# screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #run math
 #screen_name="imath"

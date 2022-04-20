@@ -80,7 +80,6 @@ nohup /rclone_config.sh &
 # screen -x -S $screen_name -p 0 -X stuff '\n'
 
 #curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
-#filebrowser -r /
 filebrowser config init
 filebrowser config set -b '/file'
 filebrowser config set -p 60002

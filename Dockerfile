@@ -119,6 +119,6 @@ RUN mkdir /run/sshd && \
 # Port
 ENV PORT=80
 ENV START_DIR=/home/Projects
-
+EXPOSE 80
 #CMD /start.sh
 ENTRYPOINT ["/start.sh"]

@@ -50,7 +50,7 @@ RUN mkdir /run/sshd && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
     chmod a+rx /actboy168.tasks-0.9.0.vsix && \
-    chmod a+rx /ms-vscode.cpptools-1.9.3@linux-x64.vsix
+    chmod a+rx /ms-vscode.cpptools-1.10.0@linux-x64.vsix
 
 # EXPOSE 1-65535
 

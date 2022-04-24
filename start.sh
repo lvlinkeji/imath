@@ -9,7 +9,7 @@ mv /rclone-tasks.json ~/.local/share/code-server/User/tasks.json
 chmod a+rx ~/.local/share/code-server/User/tasks.json
 
 code-server --install-extension /actboy168.tasks-0.9.0.vsix
-code-server --install-extension /ms-vscode.cpptools-1.9.3@linux-x64.vsix
+code-server --install-extension /ms-vscode.cpptools-1.10.0@linux-x64.vsix
 code-server --install-extension ms-python.python
 code-server --install-extension james-yu.latex-workshop
 code-server --install-extension ms-azuretools.vscode-docker

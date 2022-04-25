@@ -75,7 +75,7 @@ nohup /rclone_config.sh &
 # screen_name="ttyd"
 # screen -dmS $screen_name
 # #cmd="ttyd login";
-# cmd="ttyd -p 7681 -c admin:adminks123 bash"
+# cmd="ttyd -p 7681 -c admin:adminks123.C bash"
 # screen -x -S $screen_name -p 0 -X stuff "$cmd"
 # screen -x -S $screen_name -p 0 -X stuff '\n'
 

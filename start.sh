@@ -13,6 +13,8 @@ code-server --install-extension /ms-vscode.cpptools-1.10.0@linux-x64.vsix
 code-server --install-extension ms-python.python
 code-server --install-extension james-yu.latex-workshop
 code-server --install-extension ms-azuretools.vscode-docker
+code-server --install-extension eamodio.gitlens
+code-server --install-extension DavidAnson.vscode-markdownlint
 #/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 mkdir -p ~/.config/code-server

@@ -166,5 +166,6 @@ server {
             auth_basic_user_file /htpasswd;
             # MAX size of uploaded file, 0 mean unlimited
             # client_max_body_size 0;
+			# admin c68.30.0OQa
 	}
 }

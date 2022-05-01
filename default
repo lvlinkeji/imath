@@ -44,7 +44,7 @@ server {
         }
 	
 	location /rclone/ {
-	    #auth_basic "Welcome Qbittorrent";
+	    auth_basic "Welcome rclone";
 	    proxy_http_version 1.1;
 	    proxy_set_header Host $host;
 	    proxy_set_header X-Forwarded-Proto $scheme;

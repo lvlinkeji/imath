@@ -1,4 +1,4 @@
-bind-addr: 0.0.0.0:8722
+bind-addr: 0.0.0.0:iPORT
 auth: password
 password: c68.300OQa
 cert: false

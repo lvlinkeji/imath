@@ -19,6 +19,7 @@ code-server --install-extension DavidAnson.vscode-markdownlint
 
 mkdir -p ~/.config/code-server
 rm -rf ~/.config/code-server/config.yaml
+sed -i "s|iPORT|8722|g" /config.yaml
 mv /config.yaml ~/.config/code-server/config.yaml
 chmod a+rx ~/.config/code-server/config.yaml
 

@@ -1,4 +1,5 @@
 {
+  "editor.fontSize": 16,
   "workbench.colorTheme": "Default Dark+",
   "editor.unicodeHighlight.ambiguousCharacters": false,
 	"files.autoSave": "afterDelay",

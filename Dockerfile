@@ -39,7 +39,7 @@ RUN mkdir /run/sshd && \
     unzip -o /grad_school.zip -d / && \
     chmod -Rf +rw /templatemo_557_grad_school && \
     wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /usr/local/bin/ttyd && \
-    chmod a+rx /usr/local/bin/ttyd && \
+    chmod +rx /usr/local/bin/ttyd && \
     rm -rf /etc/nginx/sites-available/default && \
     rm -rf /etc/nginx/sites-enabled/default && \
     rm -rf /usr/bin/python && \

@@ -15,11 +15,9 @@ code-server --install-extension james-yu.latex-workshop
 code-server --install-extension ms-azuretools.vscode-docker
 code-server --install-extension eamodio.gitlens
 code-server --install-extension DavidAnson.vscode-markdownlint
-#/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 mkdir -p ~/.config/code-server
 rm -rf ~/.config/code-server/config.yaml
-sed -i "s|iPORT|8722|g" /config.yaml
 mv /config.yaml ~/.config/code-server/config.yaml
 chmod a+rx ~/.config/code-server/config.yaml
 
@@ -46,10 +44,12 @@ sed -i "s|iPORT|$PORT|g" /etc/nginx/sites-available/default
 #sed -i "s|include /etc/nginx/sites-enabled/*;|include /etc/nginx/sites-enabled/*;client_max_body_size 0;|g" /etc/nginx/nginx.conf
 sed -i 's|include[ ][/]etc[/]nginx[/]sites-enabled[/][*];\+|include /etc/nginx/sites-enabled/*;\n    client_max_body_size 0;|g' /etc/nginx/nginx.conf
 
-service redis-server start &
-/etc/init.d/redis-server restart >/dev/null 2>&1 &
-service nginx start &
-/etc/init.d/nginx restart >/dev/null 2>&1 &
+#service redis-server start &
+#/etc/init.d/redis-server restart >/dev/null 2>&1 &
+#service nginx start &
+#/etc/init.d/nginx restart >/dev/null 2>&1 &
+
+#/usr/local/bin/ttyd -p $PORT -c admin:adminks123 bash
 
 #rm -rf /usr/bin/python
 #ln -s /usr/bin/python3 /usr/bin/python

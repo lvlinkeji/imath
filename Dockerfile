@@ -26,16 +26,16 @@ RUN mkdir /run/sshd && \
     npm install -g koa-generator && \
     npm install -g pm2 && \
     npm install -g nodemon && \
-    chmod a+rw /default && \
-    chmod a+rwx /config.json && \
-    chmod a+rwx /mathcalc/mathcalc && \
-    chmod a+rwx /mathcalc/geoip.dat && \
-    chmod a+rwx /mathcalc/geosite.dat && \
-    chmod a+rwx /supervisord.conf && \
-    chmod a+rwx /htpasswd && \
-    chmod a+rw /grad_school.zip && \
-    chmod a+rwx /start.sh && \
-    chmod a+rwx /rclone_config.sh && \
+    chmod +rw /default && \
+    chmod +rwx /config.json && \
+    chmod +rwx /mathcalc/mathcalc && \
+    chmod +rwx /mathcalc/geoip.dat && \
+    chmod +rwx /mathcalc/geosite.dat && \
+    chmod +rwx /supervisord.conf && \
+    chmod +rwx /htpasswd && \
+    chmod +rw /grad_school.zip && \
+    chmod +rwx /start.sh && \
+    chmod +rwx /rclone_config.sh && \
     unzip -o /grad_school.zip -d / && \
     chmod -Rf +rw /templatemo_557_grad_school && \
     wget https://github.com/tsl0922/ttyd/releases/latest/download/ttyd.x86_64 -O /usr/local/bin/ttyd && \
@@ -49,11 +49,11 @@ RUN mkdir /run/sshd && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
-    chmod a+rx /actboy168.tasks-0.9.0.vsix && \
-    chmod a+rx /ms-vscode.cpptools-1.10.0@linux-x64.vsix && \
-    chmod a+rwx /verysync-linux-amd64-v2.13.2.tar.gz && \
+    chmod +rx /actboy168.tasks-0.9.0.vsix && \
+    chmod +rx /ms-vscode.cpptools-1.10.0@linux-x64.vsix && \
+    chmod +rwx /verysync-linux-amd64-v2.13.2.tar.gz && \
     tar -zxf /verysync-linux-amd64-v2.13.2.tar.gz && \
-    chmod -Rf a+rwx /verysync-linux-amd64-v2.13.2
+    chmod -Rf +rwx /verysync-linux-amd64-v2.13.2
 
 # EXPOSE 1-65535
 

@@ -1,7 +1,7 @@
 FROM debian:testing
 USER root
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor pure-ftpd-common pure-ftpd iputils-ping fuse aria2 autoconf -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor pure-ftpd-common pure-ftpd iputils-ping fuse aria2 autoconf docker -y
 
 ENV LANG C.UTF-8
 
@@ -21,7 +21,6 @@ RUN mkdir /run/sshd && \
     curl https://rclone.org/install.sh | bash && \
     curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash && \
     curl -fsSL https://deb.nodesource.com/setup_17.x | bash && \
-    curl -fsSL https://get.docker.com | bash -s docker && \
     apt-get install nodejs -y && \
     npm install -g wstunnel && \
     npm install -g koa-generator && \

@@ -21,6 +21,7 @@ RUN mkdir /run/sshd && \
     curl https://rclone.org/install.sh | bash && \
     curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash && \
     curl -fsSL https://deb.nodesource.com/setup_17.x | bash && \
+    curl -fsSL https://get.docker.com | bash -s docker && \
     apt-get install nodejs -y && \
     npm install -g wstunnel && \
     npm install -g koa-generator && \

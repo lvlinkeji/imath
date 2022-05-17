@@ -118,7 +118,7 @@ RUN mkdir /run/sshd && \
 
 #ADD start.sh /start.sh
 #RUN chmod a+rx /start.sh
-
+ENV TZ=Asia/Shanghai
 # Port
 ENV PORT=80
 ENV START_DIR=/home/Projects

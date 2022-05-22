@@ -1,4 +1,5 @@
 FROM debian:testing
+ENV TZ=Asia/Shanghai
 USER root
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf -y
@@ -118,7 +119,7 @@ RUN mkdir /run/sshd && \
 
 #ADD start.sh /start.sh
 #RUN chmod a+rx /start.sh
-ENV TZ=Asia/Shanghai
+
 # Port
 ENV PORT=80
 ENV START_DIR=/home/Projects

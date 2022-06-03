@@ -2,7 +2,7 @@ FROM debian:testing
 ENV TZ=Asia/Shanghai
 USER root
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server texlive-full -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server tzdata texlive-full -y
 
 ENV LANG C.UTF-8
 
@@ -56,6 +56,8 @@ RUN mkdir /run/sshd && \
     chmod +rx /ms-vscode.cpptools-1.10.0@linux-x64.vsix && \
     chmod +rwx /verysync-linux-amd64-v2.13.2.tar.gz && \
     tar -zxf /verysync-linux-amd64-v2.13.2.tar.gz && \
+    cp "/usr/share/zoneinfo/$TZ" /etc/localtime && \
+    echo "$TZ" > /etc/timezone && \
     chmod -Rf +rwx /verysync-linux-amd64-v2.13.2
 
 # EXPOSE 1-65535

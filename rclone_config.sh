@@ -3,16 +3,16 @@
 #START_DIR="${START_DIR:-/home/coder/project}"
 
 PREFIX="deploy-code-server"
-#RCLONE_FLAGS=--exclude "node_modules/**" --exclude ".git/**"
+RCLONE_FLAGS=--exclude "node_modules/**" --exclude ".git/**"
 
 # function to clone the git repo or add a user's first file if no repo was specified.
 project_init () {
-    [ -z "${GIT_REPO}" ] && echo "[$PREFIX] No GIT_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $GIT_REPO $START_DIR
+    [ -z "${MATHG_REPO}" ] && echo "[$PREFIX] No MATHG_REPO specified" && echo "Example file. Have questions? Join us at https://community.coder.com" > $START_DIR/coder.txt || git clone $MATHG_REPO $START_DIR
 }
 
 # add rclone config and start rclone, if supplied
-if [[ -z "${RCLONE_DATA}" ]]; then
-    echo "[$PREFIX] RCLONE_DATA is not specified. Files will not persist"
+if [[ -z "${MATHR_DATA}" ]]; then
+    echo "[$PREFIX] MATHR_DATA is not specified. Files will not persist"
 
     # start the project
     project_init
@@ -21,7 +21,7 @@ else
     echo "[$PREFIX] Copying rclone config..."
     mkdir -p ~/.config/rclone/
     touch ~/.config/rclone/rclone.conf
-    echo $RCLONE_DATA | base64 -d > ~/.config/rclone/rclone.conf
+    echo $MATHR_DATA | base64 -d > ~/.config/rclone/rclone.conf
 
     # default to true
     RCLONE_VSCODE_TASKS="${RCLONE_VSCODE_TASKS:-true}"
@@ -42,39 +42,50 @@ else
 
     mkdir -p /home/coder
     # Full path to the remote filesystem
-    RCLONE_REMOTE_PATH=${RCLONE_REMOTE_NAME:-onedrive_imath}:${RCLONE_DESTINATION:-Projects}
-    RCLONE_REMOTE_PATH_2=${RCLONE_REMOTE_NAME:-gdrive_small}:${RCLONE_DESTINATION:-Projects}
+    RCLONE_REMOTE_PATH_2=${RCLONE_REMOTE_NAME:-onedrive_imath}:${RCLONE_DESTINATION:-Projects}
+    RCLONE_REMOTE_PATH=${RCLONE_REMOTE_NAME:-gdrive_small}:${RCLONE_DESTINATION:-Projects}
     RCLONE_SOURCE_PATH=${RCLONE_SOURCE:-$START_DIR}
-    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH_2 $RCLONE_FLAGS -vv" > /home/coder/push_remote.sh
-    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH $RCLONE_FLAGS -vv" >> /home/coder/push_remote.sh
-    echo "rclone sync $RCLONE_REMOTE_PATH $RCLONE_SOURCE_PATH $RCLONE_FLAGS -vv" > /home/coder/pull_remote.sh
+    echo "cd ${START_DIR}" >> /home/coder/pull_remote.sh
+    echo "git pull origin main" >> /home/coder/pull_remote.sh
+    echo "# rclone sync $RCLONE_REMOTE_PATH $RCLONE_SOURCE_PATH --exclude \"node_modules/**\" --exclude \".git/**\" -vv" >> /home/coder/pull_remote.sh
+
+    echo "cd ${START_DIR}" >> /home/coder/push_remote.sh
+    echo "git config --global user.email \"mather@example.com\"" >> /home/coder/push_remote.sh
+    echo "git config --global user.name \"mather\"" >> /home/coder/push_remote.sh
+    echo "git add ." >> /home/coder/push_remote.sh
+    echo "git commit -m \"ok\"" >> /home/coder/push_remote.sh
+    echo "git push origin main" >> /home/coder/push_remote.sh
+    
+    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH --exclude \"node_modules/**\" --exclude \".git/**\" -vv" >> /home/coder/push_remote.sh
+    echo "rclone sync $RCLONE_SOURCE_PATH $RCLONE_REMOTE_PATH_2 --exclude \"node_modules/**\" --exclude \".git/**\" -vv" >> /home/coder/push_remote.sh
     chmod a+rx /home/coder/push_remote.sh
     chmod a+rx /home/coder/pull_remote.sh
+    project_init
 
-    if rclone ls $RCLONE_REMOTE_PATH; then
+    # if rclone ls $RCLONE_REMOTE_PATH; then
 
-        if [ $RCLONE_AUTO_PULL = "true" ]; then
-            # grab the files from the remote instead of running project_init()
-            echo "[$PREFIX] Pulling existing files from remote..."
-            /home/coder/pull_remote.sh&
-        else
-            # user specified they don't want to apply the tasks
-            echo "[$PREFIX] Auto-pull is disabled"
-        fi
+    #     if [ $RCLONE_AUTO_PULL = "true" ]; then
+    #         # grab the files from the remote instead of running project_init()
+    #         echo "[$PREFIX] Pulling existing files from remote..."
+    #         /home/coder/pull_remote.sh&
+    #     else
+    #         # user specified they don't want to apply the tasks
+    #         echo "[$PREFIX] Auto-pull is disabled"
+    #     fi
 
-    else
+    # else
 
-        if [ $RCLONE_AUTO_PUSH = "true" ]; then
-            # we need to clone the git repo and sync
-            echo "[$PREFIX] Pushing initial files to remote..."
-            project_init
-            /home/coder/push_remote.sh&
-        else
-            # user specified they don't want to apply the tasks
-            echo "[$PREFIX] Auto-push is disabled"
-        fi
+    #     if [ $RCLONE_AUTO_PUSH = "true" ]; then
+    #         # we need to clone the git repo and sync
+    #         echo "[$PREFIX] Pushing initial files to remote..."
+    #         project_init
+    #         /home/coder/push_remote.sh&
+    #     else
+    #         # user specified they don't want to apply the tasks
+    #         echo "[$PREFIX] Auto-push is disabled"
+    #     fi
 
-    fi
+    # fi
 
 fi
 

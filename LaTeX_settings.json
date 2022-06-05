@@ -97,5 +97,6 @@
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 1000,
 	"problems.autoReveal": false,
-	"outline.problems.badges": false
+	"outline.problems.badges": false,
+	"editor.formatOnSave": true
 }

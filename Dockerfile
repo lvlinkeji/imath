@@ -21,7 +21,7 @@ RUN mkdir /run/sshd && \
     curl -fsSL https://code-server.dev/install.sh | bash  && \
     curl https://rclone.org/install.sh | bash && \
     curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash && \
-    curl -fsSL https://deb.nodesource.com/setup_17.x | bash && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash && \
     apt-get install nodejs -y && \
     npm config set python python3 && \
     npm config set unsafe-perm true && \

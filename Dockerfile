@@ -23,8 +23,8 @@ RUN mkdir /run/sshd && \
     curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash && \
     curl -fsSL https://deb.nodesource.com/setup_19.x | bash && \
     apt-get install nodejs -y && \
-    npm config set python python3 && \
-    npm config set unsafe-perm true && \
+    # npm config set python python3 && \
+    # npm config set unsafe-perm true && \
     npm install -g wstunnel && \
     npm install -g koa-generator && \
     npm install -g pm2 && \

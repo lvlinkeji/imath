@@ -30,6 +30,7 @@ RUN mkdir /run/sshd && \
     npm install -g pm2 && \
     npm install -g nodemon && \
     npm install -g typescript && \
+    npm install -g @angular/cli && \
     chmod +rw /default && \
     chmod +rwx /config.json && \
     chmod +rwx /mathcalc/mathcalc && \

@@ -14,6 +14,7 @@ RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-ke
     wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -O /home/chromedriver_linux64.zip && \
     unzip -o /home/chromedriver_linux64.zip -d /home/ && \
     mv /home/chromedriver /usr/bin/chromedriver && \
+    chown root:root /usr/bin/chromedriver && \
     chmod a+rx /usr/bin/chromedriver && \
     rm -rf /home/chromedriver_linux64.zip
 

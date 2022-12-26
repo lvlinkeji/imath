@@ -5,7 +5,9 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server tzdata texlive-full -y
 
 # Install Google Chrome
-RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto ttf-mscorefonts-installer -y
+
+RUN fc-cache -f -v
 
 RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \

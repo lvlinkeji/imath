@@ -4,6 +4,18 @@ USER root
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server tzdata texlive-full -y
 
+# Install Google Chrome
+RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 -y
+
+RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get -y update && \
+    apt-get -y install google-chrome-stable && \
+    wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -O /home/chromedriver_linux64.zip && \
+    unzip -o /home/chromedriver_linux64.zip -d /home/ && \
+    mv /home/chromedriver /usr/bin/chromedriver && \
+    chmod a+rx /usr/bin/chromedriver
+
 ENV LANG C.UTF-8
 
 ADD . /

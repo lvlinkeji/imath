@@ -5,7 +5,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server tzdata texlive-full -y
 
 # Install Google Chrome
-RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto ttf-mscorefonts-installer -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto software-properties-common -y
 
 RUN fc-cache -f -v
 

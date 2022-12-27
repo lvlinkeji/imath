@@ -4,6 +4,13 @@ USER root
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install ssh curl wget nginx-full apache2-utils nano bash tmux qbittorrent-nox htop net-tools zip unzip screen ca-certificates python3 python3-pip build-essential manpages-dev apt-utils lsof git locales cmake libjson-c-dev libwebsockets-dev ffmpeg tor redis-server supervisor iputils-ping fuse aria2 autoconf automake openssh-server tzdata texlive-full -y
 
+RUN uname -m > /tmp/archtest
+
+RUN if [ "$(cat /tmp/archtest)" = "x86_64" ]; then \
+        echo "x86_64 architecture" && \
+        rm -rf /tmp/archtest \
+    fi
+
 # Install Google Chrome
 RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto software-properties-common -y
 

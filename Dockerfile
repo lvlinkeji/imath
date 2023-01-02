@@ -74,6 +74,8 @@ RUN mkdir /run/sshd && \
     rm -rf /.git && \
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl && \
+    wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp && \
+    chmod a+rx /usr/local/bin/yt-dlp && \
     chmod +rx /actboy168.tasks-0.9.0.vsix && \
     chmod +rx /ms-vscode.cpptools-1.10.0@linux-x64.vsix && \
     chmod +rwx /verysync-linux-amd64-v2.13.2.tar.gz && \

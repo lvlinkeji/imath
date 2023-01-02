@@ -15,8 +15,8 @@ RUN fc-cache -f -v
 
 RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get -y update && \
-    apt-get -y install google-chrome-stable && \
+    apt-get update -y && \
+    apt-get install -y google-chrome-stable && \
     wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -O /home/chromedriver_linux64.zip && \
     unzip -o /home/chromedriver_linux64.zip -d /home/ && \
     mv /home/chromedriver /usr/bin/chromedriver && \

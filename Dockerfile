@@ -9,7 +9,7 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then \
   fi
 
 # Install Google Chrome
-RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto software-properties-common -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 fonts-noto-cjk fonts-noto software-properties-common fontconfig -y
 
 RUN fc-cache -f -v
 

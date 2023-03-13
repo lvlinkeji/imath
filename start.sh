@@ -30,22 +30,26 @@ sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/ss
 fi
 
 # 安装 go
-# Download and extract Go to /usr/local/go
-curl -sSL "https://golang.org/dl/$GO_VERSION.linux-amd64.tar.gz" -o /tmp/go.tar.gz
-tar -C /usr/local -xzf /tmp/go.tar.gz
-rm /tmp/go.tar.gz
 
-# # Add Go to the PATH environment variable
-# echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile.d/go.sh
+# # Define the latest Go version
+# GO_VERSION="$(curl -sSL 'https://golang.org/VERSION?m=text')"
 
-# # Set the environment variable for the current session
-# export PATH=$PATH:/usr/local/go/bin
+# # Download and extract Go to /usr/local/go
+# curl -sSL "https://golang.org/dl/$GO_VERSION.linux-amd64.tar.gz" -o /tmp/go.tar.gz
+# tar -C /usr/local -xzf /tmp/go.tar.gz
+# rm /tmp/go.tar.gz
 
-# Add Go to the PATH environment variable in /etc/environment
-echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/environment
+# # # Add Go to the PATH environment variable
+# # echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile.d/go.sh
 
-# Reload the environment variables
-source /etc/environment
+# # # Set the environment variable for the current session
+# # export PATH=$PATH:/usr/local/go/bin
+
+# # Add Go to the PATH environment variable in /etc/environment
+# echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/environment
+
+# # Reload the environment variables
+# source /etc/environment
 
 
 #需要手动安装一下 go https://go.dev/doc/install ，添加环境变量 PATH /etc/profile，然后 source /etc/profile

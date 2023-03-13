@@ -35,11 +35,17 @@ curl -sSL "https://golang.org/dl/$GO_VERSION.linux-amd64.tar.gz" -o /tmp/go.tar.
 tar -C /usr/local -xzf /tmp/go.tar.gz
 rm /tmp/go.tar.gz
 
-# Add Go to the PATH environment variable
-echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile.d/go.sh
+# # Add Go to the PATH environment variable
+# echo 'export PATH=$PATH:/usr/local/go/bin' >> /etc/profile.d/go.sh
 
-# Set the environment variable for the current session
-export PATH=$PATH:/usr/local/go/bin
+# # Set the environment variable for the current session
+# export PATH=$PATH:/usr/local/go/bin
+
+# Add Go to the PATH environment variable in /etc/environment
+echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/environment
+
+# Reload the environment variables
+source /etc/environment
 
 
 #需要手动安装一下 go https://go.dev/doc/install ，添加环境变量 PATH /etc/profile，然后 source /etc/profile

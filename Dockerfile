@@ -22,7 +22,8 @@ RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-ke
     mv /home/chromedriver /usr/bin/chromedriver && \
     chown root:root /usr/bin/chromedriver && \
     chmod a+rx /usr/bin/chromedriver && \
-    rm -rf /home/chromedriver_linux64.zip
+    rm -rf /home/chromedriver_linux64.zip && \
+    rm -rf /home/LICENSE.chromedriver
 
 ENV LANG C.UTF-8
 

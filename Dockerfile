@@ -13,7 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install xvfb libxi6 libgconf-2-4 font
 
 RUN fc-cache -f -v
 
-RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+RUN curl -sS https://dl-ssl.google.com/linux/linux_signing_key.pub | tee /usr/share/keyrings/google-cloud-apt-keyring.gpg > /dev/null && \
+    # curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
     echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
     apt-get update -y && \
     apt-get install -y google-chrome-stable && \

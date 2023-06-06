@@ -26,6 +26,10 @@ RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-ke
     rm -rf /home/chromedriver_linux64.zip && \
     rm -rf /home/LICENSE.chromedriver
 
+# 后期更新命令如下
+# apt-get update -y
+# apt-get upgrade google-chrome-stable -y
+
 ENV LANG C.UTF-8
 
 ADD . /
